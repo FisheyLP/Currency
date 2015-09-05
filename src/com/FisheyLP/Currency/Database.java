@@ -51,7 +51,8 @@ public class Database {
 	}
 	
 	public static void close() {
-		if (con != null) try {
+		if (con != null) 
+		try {
 			con.close();
 		} catch (SQLException e) {
 			e.printStackTrace();
