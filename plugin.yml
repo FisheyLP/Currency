@@ -1,0 +1,32 @@
+name: Currency
+main: com.FisheyLP.Currency.Currency
+author: FisheyLP
+version: 1.0
+
+commands:
+  money:
+    description: Shows your money/the money of another player.
+    usage: /<command> [player]
+    aliases: [m, bal, balance, cur, currency]
+    permission: Currency.money
+  pay:
+    description: Transfers the desired amount of money to another player.
+    usage: /<command> <player> <amount>
+    aliases: [transfer, givemoney]
+    permission: Currency.pay
+
+permissions:
+  Currency.*:
+    default: op
+    children:
+      Currency.money: true
+      Currency.money.others: true
+      Currency.pay: true
+  Currency.money:
+    default: op
+  Currency.money.others:
+    default: op
+    children:
+      Currency.money: true
+  Currency.pay:
+    default: op
